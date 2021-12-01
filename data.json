@@ -4,7 +4,7 @@
         "name": "Jupiter",
         "id":"pj1",
         "categorie":"planet",
-        "price": 45 ,
+        "price": 253,
         "img":"./assets/jupiter.jpg",
         "stock": 1
     },
@@ -12,7 +12,7 @@
         "name": "Saturn",
         "id":"ps2",
         "categorie":"planet",
-        "price": 45,
+        "price": 268,
         "img":"./assets/saturn.jpg",
         "stock": 1
     },
@@ -20,7 +20,7 @@
         "name": "Venus",
         "id":"pv3",
         "categorie":"planet",
-        "price": 45,
+        "price": 127,
         "img":"./assets/venus.jpg",
         "stock": 1
     },
@@ -28,7 +28,7 @@
         "name": "Mars",
         "id":"pm4",
         "categorie":"planet",
-        "price": 45,
+        "price": 290,
         "img":"./assets/mars.jpg",
         "stock": 1
     },
@@ -36,7 +36,7 @@
         "name": "Mercury",
         "id":"pm5",
         "categorie":"planet",
-        "price": 45,
+        "price": 95,
         "img":"./assets/mercury.jpg",
         "stock": 1
     },
@@ -44,7 +44,7 @@
         "name": "Moon",
         "id":"mm1",
         "categorie":"moon",
-        "price": 45,
+        "price": 143,
         "img":"./assets/moon.jpg",
         "stock": 1
     },
@@ -52,7 +52,7 @@
         "name": "Europa",
         "id":"me2",
         "categorie":"moon",
-        "price": 45,
+        "price": 320,
         "img":"./assets/europa.jpg",
         "stock": 1
     },
@@ -60,7 +60,7 @@
         "name": "Titan",
         "id":"mt3",
         "categorie":"moon",
-        "price": 45,
+        "price": 174,
         "img":"./assets/titan.jpeg",
         "stock": 1
     },
@@ -76,7 +76,7 @@
         "name": "Callisto",
         "id":"mc5",
         "categorie":"moon",
-        "price": 45,
+        "price": 88,
         "img":"./assets/callisto.jpg",
         "stock": 1
     },
@@ -84,7 +84,7 @@
         "name": "Ganymede",
         "id":"mg6",
         "categorie":"moon",
-        "price": 45,
+        "price": 93,
         "img":"./assets/ganymede.jpeg",
         "stock": 1
     },
@@ -92,7 +92,7 @@
         "name": "Io",
         "id":"mi7",
         "categorie":"moon",
-        "price": 45,
+        "price": 42,
         "img":"./assets/io.jpg",
         "stock": 1
     },
@@ -100,7 +100,7 @@
         "name": "Triton",
         "id":"mt8",
         "categorie":"moon",
-        "price": 45,
+        "price": 21,
         "img":"./assets/triton.jpg",
         "stock": 1
     },
@@ -108,7 +108,7 @@
         "name": "Saturn V",
         "id":"ls1",
         "categorie":"launch",
-        "price": 45,
+        "price": 13,
         "img":"./assets/saturnV.jpg",
         "stock": 10
     },
@@ -116,7 +116,7 @@
         "name": "Soyouz",
         "id":"ls2",
         "categorie":"launch",
-        "price": 45,
+        "price": 7,
         "img":"./assets/soyouz.jpg",
         "stock": 14
     },
@@ -124,7 +124,7 @@
         "name": "Space shuttle",
         "id":"ls3",
         "categorie":"launch",
-        "price": 45,
+        "price": 6,
         "img":"./assets/shuttle.jpg",
         "stock": 1
     },
@@ -132,7 +132,7 @@
         "name": "Falcon 9",
         "id":"lf4",
         "categorie":"launch",
-        "price": 45,
+        "price": 17,
         "img":"./assets/falcon.jpg",
         "stock": 3
     },
@@ -140,7 +140,7 @@
         "name": "Ariane 5",
         "id":"la5",
         "categorie":"launch",
-        "price": 45,
+        "price": 16,
         "img":"./assets/ariane.jpg",
         "stock": 4
     },
@@ -148,7 +148,7 @@
         "name": "Iss",
         "id":"oi1",
         "categorie":"other",
-        "price": 45,
+        "price": 38,
         "img":"./assets/iss.jpg",
         "stock": 1
     },
@@ -156,7 +156,7 @@
         "name": "Space suit",
         "id":"os2",
         "categorie":"other",
-        "price": 45,
+        "price": 1,
         "img":"./assets/suit.jpg",
         "stock": 20
     },
@@ -164,7 +164,7 @@
         "name": "Satellite",
         "id":"os3",
         "categorie":"other",
-        "price": 45,
+        "price": 3,
         "img":"./assets/satellite.jpg",
         "stock": 5
     },
@@ -172,7 +172,7 @@
         "name": "Probe",
         "id":"op4",
         "categorie":"other",
-        "price": 45,
+        "price": 5,
         "img":"./assets/probe.jpg",
         "stock": 8
     }

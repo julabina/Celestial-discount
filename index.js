@@ -2,6 +2,8 @@ const articlesContainer = document.querySelector(".articlesContainer");
 const categorieTitle = document.querySelector(".catTitle");
 const categorieSelect = document.getElementById("categoriesSelect");
 const cartContainer = document.querySelector(".cartContainer");
+const totalContainer = document.querySelector(".totalContainer");
+const emptyCart = document.getElementById("cartRemoveBtn");
 
 let datas;
 let datasCatFiltered;
@@ -26,11 +28,15 @@ const resetCartDisplay = () => {
 
 const displayCart = () => {
   resetCartDisplay();
+  let total = 0;
   for (let i = 0; i < cart.length; i++) {
+    let priceTotalArticle = cart[i].price * cart[i].addToCart;
+    total += priceTotalArticle;
     cartContainer.innerHTML += `
-            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price} X ${cart[i].addToCart}<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
+            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price}M € X ${cart[i].addToCart} = ${priceTotalArticle}M €<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
         `;
   }
+  totalContainer.textContent = total;
 };
 
 const verifyCart = (newArt) => {
@@ -148,10 +154,6 @@ const displayArticles = (arr) => {
   }
 };
 
-categorieSelect.addEventListener("change", () => {
-  selectDisplay();
-});
-
 function catFilter(cat) {
   const filtered = datas.articles.filter((el) => {
     if (el.categorie === cat) {
@@ -162,3 +164,16 @@ function catFilter(cat) {
   });
   datasCatFiltered = filtered;
 }
+
+categorieSelect.addEventListener("change", () => {
+  selectDisplay();
+});
+
+emptyCart.addEventListener("click", () => {
+  isConfirm = confirm("Are you sure to empty your cart ?");
+  if (isConfirm) {
+    cart = [];
+    displayCart();
+    selectDisplay();
+  }
+});
