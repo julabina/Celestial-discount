@@ -61,7 +61,7 @@
         "id":"mt3",
         "categorie":"moon",
         "price": 45,
-        "img":"./assets/titan.jpg",
+        "img":"./assets/titan.jpeg",
         "stock": 1
     },
     {
@@ -85,7 +85,7 @@
         "id":"mg6",
         "categorie":"moon",
         "price": 45,
-        "img":"./assets/ganymede.jpg",
+        "img":"./assets/ganymede.jpeg",
         "stock": 1
     },
 {
