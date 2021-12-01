@@ -1,5 +1,6 @@
 {
-    "jupiter" : {
+   "articles": [ 
+    {
         "name": "Jupiter",
         "id":"pj1",
         "categorie":"planet",
@@ -7,7 +8,7 @@
         "img":"",
         "stock": 1
     },
-    "saturne" : {
+     {
         "name": "Saturne",
         "id":"ps2",
         "categorie":"planet",
@@ -15,7 +16,7 @@
         "img":"",
         "stock": 1
     },
-    "venus" : {
+    {
         "name": "Venus",
         "id":"pv3",
         "categorie":"planet",
@@ -23,7 +24,7 @@
         "img":"",
         "stock": 1
     },
-    "mars" : {
+    {
         "name": "Mars",
         "id":"pm4",
         "categorie":"planet",
@@ -31,7 +32,7 @@
         "img":"",
         "stock": 1
     },
-    "mercury" : {
+    {
         "name": "Mercury",
         "id":"pm5",
         "categorie":"planet",
@@ -39,7 +40,7 @@
         "img":"",
         "stock": 1
     },
-    "moon" : {
+    {
         "name": "Moon",
         "id":"mm1",
         "categorie":"moon",
@@ -47,7 +48,7 @@
         "img":"",
         "stock": 1
     },
-    "europa" : {
+    {
         "name": "Europa",
         "id":"me2",
         "categorie":"moon",
@@ -55,7 +56,7 @@
         "img":"",
         "stock": 1
     },
-    "titan" : {
+    {
         "name": "Titan",
         "id":"mt3",
         "categorie":"moon",
@@ -63,7 +64,7 @@
         "img":"",
         "stock": 1
     },
-    "phobos" : {
+    {
         "name": "Phobos",
         "id":"mp4",
         "categorie":"moon",
@@ -71,7 +72,7 @@
         "img":"",
         "stock": 1
     },
-    "callisto" : {
+    {
         "name": "Callisto",
         "id":"mc5",
         "categorie":"moon",
@@ -79,7 +80,7 @@
         "img":"",
         "stock": 1
     },
-    "ganymede" : {
+    {
         "name": "Ganymede",
         "id":"mg6",
         "categorie":"moon",
@@ -87,7 +88,7 @@
         "img":"",
         "stock": 1
     },
-    "io" : {
+{
         "name": "Io",
         "id":"mi7",
         "categorie":"moon",
@@ -95,7 +96,7 @@
         "img":"",
         "stock": 1
     },
-    "triton" : {
+    {
         "name": "Triton",
         "id":"mt8",
         "categorie":"moon",
@@ -103,7 +104,7 @@
         "img":"",
         "stock": 1
     },
-    "saturn5" : {
+    {
         "name": "Saturn V",
         "id":"ls1",
         "categorie":"launch",
@@ -111,7 +112,7 @@
         "img":"",
         "stock": 10
     },
-    "soyouz" : {
+    {
         "name": "Soyouz",
         "id":"ls2",
         "categorie":"launch",
@@ -119,7 +120,7 @@
         "img":"",
         "stock": 14
     },
-    "shuttle" : {
+    {
         "name": "Space shuttle",
         "id":"ls3",
         "categorie":"launch",
@@ -127,7 +128,7 @@
         "img":"",
         "stock": 1
     },
-    "falcon" : {
+    {
         "name": "Falcon 9",
         "id":"lf4",
         "categorie":"launch",
@@ -135,7 +136,7 @@
         "img":"",
         "stock": 3
     },
-    "ariane" : {
+    {
         "name": "Ariane 5",
         "id":"la5",
         "categorie":"launch",
@@ -143,7 +144,7 @@
         "img":"",
         "stock": 4
     },
-    "iss" : {
+    {
         "name": "Iss",
         "id":"oi1",
         "categorie":"other",
@@ -151,7 +152,7 @@
         "img":"",
         "stock": 1
     },
-    "spaceSuit" : {
+    {
         "name": "Space suit",
         "id":"os2",
         "categorie":"other",
@@ -159,7 +160,7 @@
         "img":"",
         "stock": 20
     },
-    "satellite" : {
+    {
         "name": "Satellite",
         "id":"os3",
         "categorie":"other",
@@ -167,7 +168,7 @@
         "img":"",
         "stock": 5
     },
-    "probe" : {
+    {
         "name": "Probe",
         "id":"op4",
         "categorie":"other",
@@ -175,4 +176,5 @@
         "img":"",
         "stock": 8
     }
+]
 }
