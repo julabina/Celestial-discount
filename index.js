@@ -28,7 +28,7 @@ const displayCart = () => {
   resetCartDisplay();
   for (let i = 0; i < cart.length; i++) {
     cartContainer.innerHTML += `
-            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price} X ${cart[i].addToCart}<button onClick={addItemToCart("${i}")}>-</button><button onClick={removeItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
+            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price} X ${cart[i].addToCart}<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
         `;
   }
 };
@@ -65,14 +65,22 @@ const addToCart = (a) => {
   selectDisplay();
 };
 
-const removeToCart = (a) => {
-  if (cart[a].addToCart > 1) {
-    cart[a].addToCart = cart[a].addToCart - 1;
-  } else {
-    cart.splice(a, 1);
-  }
+const removeToCart = (ind) => {
+  cart.splice(ind, 1);
   displayCart();
   selectDisplay();
+};
+
+const addItemToCart = (ind) => {};
+
+const removeItemToCart = (ind) => {
+  if (cart[ind].addToCart > 1) {
+    cart[ind].addToCart = cart[ind].addToCart - 1;
+    displayCart();
+    selectDisplay();
+  } else {
+    removeToCart(ind);
+  }
 };
 
 const verifyStock = (id, val) => {
