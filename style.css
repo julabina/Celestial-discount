@@ -7,3 +7,23 @@
 }
 
 /* HEADER CSS */
+
+/* MAIN css */
+
+.article {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.articleImgContainer img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.articleBottom {
+  display: flex;
+}

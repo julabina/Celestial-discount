@@ -5,15 +5,15 @@
         "id":"pj1",
         "categorie":"planet",
         "price": 45 ,
-        "img":"",
+        "img":"./assets/jupiter.jpg",
         "stock": 1
     },
      {
-        "name": "Saturne",
+        "name": "Saturn",
         "id":"ps2",
         "categorie":"planet",
         "price": 45,
-        "img":"",
+        "img":"./assets/saturn.jpg",
         "stock": 1
     },
     {
@@ -21,7 +21,7 @@
         "id":"pv3",
         "categorie":"planet",
         "price": 45,
-        "img":"",
+        "img":"./assets/venus.jpg",
         "stock": 1
     },
     {
@@ -29,7 +29,7 @@
         "id":"pm4",
         "categorie":"planet",
         "price": 45,
-        "img":"",
+        "img":"./assets/mars.jpg",
         "stock": 1
     },
     {
@@ -37,7 +37,7 @@
         "id":"pm5",
         "categorie":"planet",
         "price": 45,
-        "img":"",
+        "img":"./assets/mercury.jpg",
         "stock": 1
     },
     {
@@ -45,7 +45,7 @@
         "id":"mm1",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/moon.jpg",
         "stock": 1
     },
     {
@@ -53,7 +53,7 @@
         "id":"me2",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/europa.jpg",
         "stock": 1
     },
     {
@@ -61,7 +61,7 @@
         "id":"mt3",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/titan.jpg",
         "stock": 1
     },
     {
@@ -69,7 +69,7 @@
         "id":"mp4",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/phobos.jpg",
         "stock": 1
     },
     {
@@ -77,7 +77,7 @@
         "id":"mc5",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/callisto.jpg",
         "stock": 1
     },
     {
@@ -85,7 +85,7 @@
         "id":"mg6",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/ganymede.jpg",
         "stock": 1
     },
 {
@@ -93,7 +93,7 @@
         "id":"mi7",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/io.jpg",
         "stock": 1
     },
     {
@@ -101,7 +101,7 @@
         "id":"mt8",
         "categorie":"moon",
         "price": 45,
-        "img":"",
+        "img":"./assets/triton.jpg",
         "stock": 1
     },
     {
@@ -109,7 +109,7 @@
         "id":"ls1",
         "categorie":"launch",
         "price": 45,
-        "img":"",
+        "img":"./assets/saturnV.jpg",
         "stock": 10
     },
     {
@@ -117,7 +117,7 @@
         "id":"ls2",
         "categorie":"launch",
         "price": 45,
-        "img":"",
+        "img":"./assets/soyouz.jpg",
         "stock": 14
     },
     {
@@ -125,7 +125,7 @@
         "id":"ls3",
         "categorie":"launch",
         "price": 45,
-        "img":"",
+        "img":"./assets/shuttle.jpg",
         "stock": 1
     },
     {
@@ -133,7 +133,7 @@
         "id":"lf4",
         "categorie":"launch",
         "price": 45,
-        "img":"",
+        "img":"./assets/falcon.jpg",
         "stock": 3
     },
     {
@@ -141,7 +141,7 @@
         "id":"la5",
         "categorie":"launch",
         "price": 45,
-        "img":"",
+        "img":"./assets/ariane.jpg",
         "stock": 4
     },
     {
@@ -149,7 +149,7 @@
         "id":"oi1",
         "categorie":"other",
         "price": 45,
-        "img":"",
+        "img":"./assets/iss.jpg",
         "stock": 1
     },
     {
@@ -157,7 +157,7 @@
         "id":"os2",
         "categorie":"other",
         "price": 45,
-        "img":"",
+        "img":"./assets/suit.jpg",
         "stock": 20
     },
     {
@@ -165,7 +165,7 @@
         "id":"os3",
         "categorie":"other",
         "price": 45,
-        "img":"",
+        "img":"./assets/satellite.jpg",
         "stock": 5
     },
     {
@@ -173,7 +173,7 @@
         "id":"op4",
         "categorie":"other",
         "price": 45,
-        "img":"",
+        "img":"./assets/probe.jpg",
         "stock": 8
     }
 ]
