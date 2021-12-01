@@ -36,8 +36,6 @@ const displayCart = () => {
 const verifyCart = (newArt) => {
   for (let i = 0; i < cart.length; i++) {
     if (newArt.id === cart[i].id) {
-      console.log(newArt);
-      console.log(cart);
       if (cart[i].addToCart < cart[i].stock) {
         cart[i].addToCart = cart[i].addToCart + 1;
       }
@@ -71,7 +69,17 @@ const removeToCart = (ind) => {
   selectDisplay();
 };
 
-const addItemToCart = (ind) => {};
+const addItemToCart = (ind) => {
+  for (let i = 0; i < datas.articles.length; i++) {
+    if (datas.articles[i].id === cart[ind].id) {
+      if (cart[ind].addToCart < datas.articles[i].stock) {
+        cart[ind].addToCart = cart[ind].addToCart + 1;
+        displayCart();
+        selectDisplay();
+      }
+    }
+  }
+};
 
 const removeItemToCart = (ind) => {
   if (cart[ind].addToCart > 1) {
