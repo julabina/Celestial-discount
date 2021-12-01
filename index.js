@@ -110,18 +110,23 @@ const verifyStock = (id, val) => {
 const selectDisplay = () => {
   resetDisplay();
   if (categorieSelect.value === "all") {
+    categorieTitle.textContent = "All";
     displayArticles(datas.articles);
   } else if (categorieSelect.value === "planet") {
     catFilter("planet");
+    categorieTitle.textContent = "Planets";
     displayArticles(datasCatFiltered);
   } else if (categorieSelect.value === "moon") {
     catFilter("moon");
+    categorieTitle.textContent = "Moons";
     displayArticles(datasCatFiltered);
   } else if (categorieSelect.value === "launch") {
     catFilter("launch");
+    categorieTitle.textContent = "Space launchers";
     displayArticles(datasCatFiltered);
   } else if (categorieSelect.value === "other") {
     catFilter("other");
+    categorieTitle.textContent = "Other";
     displayArticles(datasCatFiltered);
   }
 };
