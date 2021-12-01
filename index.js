@@ -5,48 +5,122 @@ const cartContainer = document.querySelector(".cartContainer");
 
 let datas;
 let datasCatFiltered;
-let cart = [
-  { id: "ps2", name: "Saturn", addToCart: 1, price: 45 },
-  { id: "ls1", name: "Saturn V", addToCart: 3, price: 45 },
-];
+let stocks;
+let cart = [];
 
 fetch("data.json")
   .then((res) => res.json())
   .then((data) => {
     datas = data;
     displayArticles(datas.articles);
+    displayCart();
   });
 
 const resetDisplay = () => {
   articlesContainer.innerHTML = ``;
 };
 
-const test = () => {
+const resetCartDisplay = () => {
+  cartContainer.innerHTML = ``;
+};
+
+const displayCart = () => {
+  resetCartDisplay();
   for (let i = 0; i < cart.length; i++) {
     cartContainer.innerHTML += `
-            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price} X ${cart[i].addToCart}<button>X</button></div>
+            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price} X ${cart[i].addToCart}<button onClick={addItemToCart("${i}")}>-</button><button onClick={removeItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
         `;
   }
+};
+
+const verifyCart = (newArt) => {
+  for (let i = 0; i < cart.length; i++) {
+    if (newArt.id === cart[i].id) {
+      console.log(newArt);
+      console.log(cart);
+      if (cart[i].addToCart < cart[i].stock) {
+        cart[i].addToCart = cart[i].addToCart + 1;
+      }
+      return;
+    }
+  }
+  newArt.addToCart = 1;
+  cart.push(newArt);
 };
 
 const addToCart = (a) => {
   for (let i = 0; i < datas.articles.length; i++) {
     if (a === datas.articles[i].id) {
-      console.log(datas.articles[i].name);
+      let art = {
+        id: datas.articles[i].id,
+        name: datas.articles[i].name,
+        price: datas.articles[i].price,
+        stock: datas.articles[i].stock,
+        addToCart,
+      };
+      verifyCart(art);
     }
+  }
+  displayCart();
+  selectDisplay();
+};
+
+const removeToCart = (a) => {
+  if (cart[a].addToCart > 1) {
+    cart[a].addToCart = cart[a].addToCart - 1;
+  } else {
+    cart.splice(a, 1);
+  }
+  displayCart();
+  selectDisplay();
+};
+
+const verifyStock = (id, val) => {
+  stocks = undefined;
+  for (let i = 0; i < cart.length; i++) {
+    if (id === cart[i].id) {
+      stocks = val - cart[i].addToCart;
+      return stocks;
+    }
+  }
+};
+
+const selectDisplay = () => {
+  resetDisplay();
+  if (categorieSelect.value === "all") {
+    displayArticles(datas.articles);
+  } else if (categorieSelect.value === "planet") {
+    catFilter("planet");
+    displayArticles(datasCatFiltered);
+  } else if (categorieSelect.value === "moon") {
+    catFilter("moon");
+    displayArticles(datasCatFiltered);
+  } else if (categorieSelect.value === "launch") {
+    catFilter("launch");
+    displayArticles(datasCatFiltered);
+  } else if (categorieSelect.value === "other") {
+    catFilter("other");
+    displayArticles(datasCatFiltered);
   }
 };
 
 const displayArticles = (arr) => {
   let displayArray = arr;
   for (let i = 0; i < displayArray.length; i++) {
+    verifyStock(displayArray[i].id, displayArray[i].stock);
+    let stock;
+    if (stocks === undefined) {
+      stock = displayArray[i].stock;
+    } else {
+      stock = parseInt(stocks);
+    }
     articlesContainer.innerHTML += `
     <div class="article" id="${displayArray[i].id}">
                 <div class="articleImgContainer">
                     <img src="${displayArray[i].img}" alt="picture of ${displayArray[i].name}">
                 </div>
                 <h2>${displayArray[i].name}</h2>
-                <p>Stock : <span>${displayArray[i].stock}</span></p>
+                <p>Stock : <span>${stock}</span></p>
                 <div class="articleBottom">
                     <div class="priceArticle">
                         <p><span>${displayArray[i].price}</span>M €</p>
@@ -59,26 +133,7 @@ const displayArticles = (arr) => {
 };
 
 categorieSelect.addEventListener("change", () => {
-  if (categorieSelect.value === "all") {
-    resetDisplay();
-    displayArticles(datas.articles);
-  } else if (categorieSelect.value === "planet") {
-    resetDisplay();
-    catFilter("planet");
-    displayArticles(datasCatFiltered);
-  } else if (categorieSelect.value === "moon") {
-    resetDisplay();
-    catFilter("moon");
-    displayArticles(datasCatFiltered);
-  } else if (categorieSelect.value === "launch") {
-    resetDisplay();
-    catFilter("launch");
-    displayArticles(datasCatFiltered);
-  } else if (categorieSelect.value === "other") {
-    resetDisplay();
-    catFilter("other");
-    displayArticles(datasCatFiltered);
-  }
+  selectDisplay();
 });
 
 function catFilter(cat) {
