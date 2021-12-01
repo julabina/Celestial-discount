@@ -1,9 +1,14 @@
 const articlesContainer = document.querySelector(".articlesContainer");
 const categorieTitle = document.querySelector(".catTitle");
 const categorieSelect = document.getElementById("categoriesSelect");
+const cartContainer = document.querySelector(".cartContainer");
 
 let datas;
 let datasCatFiltered;
+let cart = [
+  { id: "ps2", name: "Saturn", addToCart: 1, price: 45 },
+  { id: "ls1", name: "Saturn V", addToCart: 3, price: 45 },
+];
 
 fetch("data.json")
   .then((res) => res.json())
@@ -16,8 +21,20 @@ const resetDisplay = () => {
   articlesContainer.innerHTML = ``;
 };
 
-const tetest = (a) => {
-  console.log(a);
+const test = () => {
+  for (let i = 0; i < cart.length; i++) {
+    cartContainer.innerHTML += `
+            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price} X ${cart[i].addToCart}<button>X</button></div>
+        `;
+  }
+};
+
+const addToCart = (a) => {
+  for (let i = 0; i < datas.articles.length; i++) {
+    if (a === datas.articles[i].id) {
+      console.log(datas.articles[i].name);
+    }
+  }
 };
 
 const displayArticles = (arr) => {
@@ -34,7 +51,7 @@ const displayArticles = (arr) => {
                     <div class="priceArticle">
                         <p><span>${displayArray[i].price}</span>M €</p>
                     </div>
-                    <button onClick={tetest("${displayArray[i].id}")}>Add</button>
+                    <button onClick={addToCart("${displayArray[i].id}")}>Add</button>
                 </div>
             </div>
     `;

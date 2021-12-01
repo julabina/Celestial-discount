@@ -8,6 +8,10 @@
 
 /* HEADER CSS */
 
+.cartArticle {
+  display: flex;
+}
+
 /* MAIN css */
 
 .article {
