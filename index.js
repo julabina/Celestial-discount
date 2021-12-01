@@ -16,6 +16,7 @@ fetch("data.json")
     datas = data;
     displayArticles(datas.articles);
     displayCart();
+    categorieTitle.textContent = "All";
   });
 
 const resetDisplay = () => {
