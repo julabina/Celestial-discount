@@ -170,10 +170,12 @@ categorieSelect.addEventListener("change", () => {
 });
 
 emptyCart.addEventListener("click", () => {
-  isConfirm = confirm("Are you sure to empty your cart ?");
-  if (isConfirm) {
-    cart = [];
-    displayCart();
-    selectDisplay();
+  if (cart.length > 0) {
+    isConfirm = confirm("Are you sure to empty your cart ?");
+    if (isConfirm) {
+      cart = [];
+      displayCart();
+      selectDisplay();
+    }
   }
 });
