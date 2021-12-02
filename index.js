@@ -5,6 +5,7 @@ const totalContainer = document.querySelector(".totalContainer");
 const emptyCart = document.getElementById("cartRemoveBtn");
 const hideBtn = document.getElementById("hideCartBtn");
 const cartH = document.querySelector(".cart");
+const pay = document.getElementById("validateCart");
 
 let datas, datasCatFiltered, stocks;
 let cart = [];
@@ -202,5 +203,14 @@ hideBtn.addEventListener("click", () => {
     cartH.classList.remove("hidden");
   } else {
     cartH.classList.add("hidden");
+  }
+});
+
+pay.addEventListener("click", () => {
+  if (cart.length > 0) {
+    cart = [];
+    displayCart();
+    selectDisplay();
+    alert("Thank to your order");
   }
 });
