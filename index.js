@@ -56,14 +56,6 @@ const verifyStock = (id, val) => {
   }
 };
 
-/* 
-<div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price}M € X ${cart[i].addToCart} = ${priceTotalArticle}M €<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
-<div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price}M € X ${cart[i].addToCart} = ${priceTotalArticle}M €<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
-
-<div class="cartArticle" id="${cart[i].id}"><p>${cart[i].name}</p><div class="cartArticleAddRemove"><button onClick={removeItemToCart("${i}")}>-</button><p>${cart[i].addToCart}</p><button onClick={addItemToCart("${i}")}>+</button></div><div><p>${priceTotalArticle}M €</p></div><button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
-
-*/
-
 const displayCart = () => {
   resetCartDisplay();
   let total = 0;
