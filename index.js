@@ -5,9 +5,7 @@ const cartContainer = document.querySelector(".cartContainer");
 const totalContainer = document.querySelector(".totalContainer");
 const emptyCart = document.getElementById("cartRemoveBtn");
 
-let datas;
-let datasCatFiltered;
-let stocks;
+let datas, datasCatFiltered, stocks;
 let cart = [];
 
 fetch("data.json")
@@ -19,12 +17,42 @@ fetch("data.json")
     categorieTitle.textContent = "All";
   });
 
-const resetDisplay = () => {
-  articlesContainer.innerHTML = ``;
+const displayArticles = (arr) => {
+  let displayArray = arr;
+  for (let i = 0; i < displayArray.length; i++) {
+    verifyStock(displayArray[i].id, displayArray[i].stock);
+    let stock;
+    if (stocks === undefined) {
+      stock = displayArray[i].stock;
+    } else {
+      stock = parseInt(stocks);
+    }
+    articlesContainer.innerHTML += `
+    <div class="article" id="${displayArray[i].id}">
+                <div class="articleImgContainer">
+                    <img src="${displayArray[i].img}" alt="picture of ${displayArray[i].name}">
+                </div>
+                <h2>${displayArray[i].name}</h2>
+                <p>Stock : <span>${stock}</span></p>
+                <div class="articleBottom">
+                    <div class="priceArticle">
+                        <p><span>${displayArray[i].price}</span>M €</p>
+                    </div>
+                    <button onClick={addToCart("${displayArray[i].id}")}>Add</button>
+                </div>
+            </div>
+    `;
+  }
 };
 
-const resetCartDisplay = () => {
-  cartContainer.innerHTML = ``;
+const verifyStock = (id, val) => {
+  stocks = undefined;
+  for (let i = 0; i < cart.length; i++) {
+    if (id === cart[i].id) {
+      stocks = val - cart[i].addToCart;
+      return stocks;
+    }
+  }
 };
 
 const displayCart = () => {
@@ -38,19 +66,6 @@ const displayCart = () => {
         `;
   }
   totalContainer.textContent = total;
-};
-
-const verifyCart = (newArt) => {
-  for (let i = 0; i < cart.length; i++) {
-    if (newArt.id === cart[i].id) {
-      if (cart[i].addToCart < cart[i].stock) {
-        cart[i].addToCart = cart[i].addToCart + 1;
-      }
-      return;
-    }
-  }
-  newArt.addToCart = 1;
-  cart.push(newArt);
 };
 
 const addToCart = (a) => {
@@ -68,6 +83,19 @@ const addToCart = (a) => {
   }
   displayCart();
   selectDisplay();
+};
+
+const verifyCart = (newArt) => {
+  for (let i = 0; i < cart.length; i++) {
+    if (newArt.id === cart[i].id) {
+      if (cart[i].addToCart < cart[i].stock) {
+        cart[i].addToCart = cart[i].addToCart + 1;
+      }
+      return;
+    }
+  }
+  newArt.addToCart = 1;
+  cart.push(newArt);
 };
 
 const removeToCart = (ind) => {
@@ -98,16 +126,6 @@ const removeItemToCart = (ind) => {
   }
 };
 
-const verifyStock = (id, val) => {
-  stocks = undefined;
-  for (let i = 0; i < cart.length; i++) {
-    if (id === cart[i].id) {
-      stocks = val - cart[i].addToCart;
-      return stocks;
-    }
-  }
-};
-
 const selectDisplay = () => {
   resetDisplay();
   if (categorieSelect.value === "all") {
@@ -132,34 +150,6 @@ const selectDisplay = () => {
   }
 };
 
-const displayArticles = (arr) => {
-  let displayArray = arr;
-  for (let i = 0; i < displayArray.length; i++) {
-    verifyStock(displayArray[i].id, displayArray[i].stock);
-    let stock;
-    if (stocks === undefined) {
-      stock = displayArray[i].stock;
-    } else {
-      stock = parseInt(stocks);
-    }
-    articlesContainer.innerHTML += `
-    <div class="article" id="${displayArray[i].id}">
-                <div class="articleImgContainer">
-                    <img src="${displayArray[i].img}" alt="picture of ${displayArray[i].name}">
-                </div>
-                <h2>${displayArray[i].name}</h2>
-                <p>Stock : <span>${stock}</span></p>
-                <div class="articleBottom">
-                    <div class="priceArticle">
-                        <p><span>${displayArray[i].price}</span>M €</p>
-                    </div>
-                    <button onClick={addToCart("${displayArray[i].id}")}>Add</button>
-                </div>
-            </div>
-    `;
-  }
-};
-
 function catFilter(cat) {
   const filtered = datas.articles.filter((el) => {
     if (el.categorie === cat) {
@@ -170,6 +160,16 @@ function catFilter(cat) {
   });
   datasCatFiltered = filtered;
 }
+
+const resetDisplay = () => {
+  articlesContainer.innerHTML = ``;
+};
+
+const resetCartDisplay = () => {
+  cartContainer.innerHTML = ``;
+};
+
+/* EVENT */
 
 categorieSelect.addEventListener("change", () => {
   selectDisplay();
