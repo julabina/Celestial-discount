@@ -1,9 +1,10 @@
 const articlesContainer = document.querySelector(".articlesContainer");
-const categorieTitle = document.querySelector(".catTitle");
 const categorieSelect = document.getElementById("categoriesSelect");
 const cartContainer = document.querySelector(".cartContainer");
 const totalContainer = document.querySelector(".totalContainer");
 const emptyCart = document.getElementById("cartRemoveBtn");
+const hideBtn = document.getElementById("hideCartBtn");
+const cartH = document.querySelector(".cart");
 
 let datas, datasCatFiltered, stocks;
 let cart = [];
@@ -14,7 +15,6 @@ fetch("data.json")
     datas = data;
     displayArticles(datas.articles);
     displayCart();
-    categorieTitle.textContent = "All";
   });
 
 const displayArticles = (arr) => {
@@ -55,17 +55,33 @@ const verifyStock = (id, val) => {
   }
 };
 
+/* 
+<div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price}M € X ${cart[i].addToCart} = ${priceTotalArticle}M €<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
+<div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price}M € X ${cart[i].addToCart} = ${priceTotalArticle}M €<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
+
+<div class="cartArticle" id="${cart[i].id}"><p>${cart[i].name}</p><div class="cartArticleAddRemove"><button onClick={removeItemToCart("${i}")}>-</button><p>${cart[i].addToCart}</p><button onClick={addItemToCart("${i}")}>+</button></div><div><p>${priceTotalArticle}M €</p></div><button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
+
+*/
+
 const displayCart = () => {
   resetCartDisplay();
   let total = 0;
-  for (let i = 0; i < cart.length; i++) {
-    let priceTotalArticle = cart[i].price * cart[i].addToCart;
-    total += priceTotalArticle;
-    cartContainer.innerHTML += `
-            <div class="cartArticle" id="${cart[i].id}">${cart[i].name} : ${cart[i].price}M € X ${cart[i].addToCart} = ${priceTotalArticle}M €<button onClick={removeItemToCart("${i}")}>-</button><button onClick={addItemToCart("${i}")}>+</button><button onClick={removeToCart("${i}")}>X</button></div>
-        `;
+  if (cart.length > 0) {
+    for (let i = 0; i < cart.length; i++) {
+      let priceTotalArticle = cart[i].price * cart[i].addToCart;
+      total += priceTotalArticle;
+      cartContainer.innerHTML += `
+      <div class="cartArticle" id="${cart[i].id}"><p class="cartArticleName">${cart[i].name}</p><div class="cartArticleAddRemove"><button onClick={removeItemToCart("${i}")}>-</button><p>${cart[i].addToCart}</p><button onClick={addItemToCart("${i}")}>+</button></div><div><p class="cartArticlePrice">${priceTotalArticle}M €</p></div><button id="removeItemBtn" onClick={removeToCart("${i}")}>X</button></div>
+      
+      `;
+    }
+    totalContainer.textContent = total;
+  } else {
+    cartContainer.innerHTML = `
+    <p class="emptyText">Your cart is empty</p>
+    `;
+    totalContainer.textContent = 0;
   }
-  totalContainer.textContent = total;
 };
 
 const addToCart = (a) => {
@@ -129,23 +145,18 @@ const removeItemToCart = (ind) => {
 const selectDisplay = () => {
   resetDisplay();
   if (categorieSelect.value === "all") {
-    categorieTitle.textContent = "All";
     displayArticles(datas.articles);
   } else if (categorieSelect.value === "planet") {
     catFilter("planet");
-    categorieTitle.textContent = "Planets";
     displayArticles(datasCatFiltered);
   } else if (categorieSelect.value === "moon") {
     catFilter("moon");
-    categorieTitle.textContent = "Moons";
     displayArticles(datasCatFiltered);
   } else if (categorieSelect.value === "launch") {
     catFilter("launch");
-    categorieTitle.textContent = "Space launchers";
     displayArticles(datasCatFiltered);
   } else if (categorieSelect.value === "other") {
     catFilter("other");
-    categorieTitle.textContent = "Other";
     displayArticles(datasCatFiltered);
   }
 };
@@ -183,5 +194,13 @@ emptyCart.addEventListener("click", () => {
       displayCart();
       selectDisplay();
     }
+  }
+});
+
+hideBtn.addEventListener("click", () => {
+  if (cartH.classList.contains("hidden")) {
+    cartH.classList.remove("hidden");
+  } else {
+    cartH.classList.add("hidden");
   }
 });

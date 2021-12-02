@@ -10,13 +10,24 @@
 <body>
     <Header>
         <h1>Celestial discount</h1>
-        <h3>Your space bodies at a minimum price</h3>
-        <div class="cartContainer">
+        <h3>Your celestial bodies at a minimum price</h3>
+        <button id="hideCartBtn">Cart</button>
+        <div class="cart hidden">
             
+                <div class="cartContainer">
+                    
+                </div>
+                <div class="headerLineCart"></div>
+                <div class="cartBottom">
+                    <div class="cartBottomTotal"><p>Total : <span class="totalContainer"></span>M €</p></div>
+                    <div class="cartBottomBtn">
+                        <button id="cartRemoveBtn">Empty cart</button>
+                        <button id="validateCart">Pay</button>
+                    </div>
+                </div>
+        
         </div>
-        <div><p>Total : <span class="totalContainer"></span>M €</p></div>
-        <button id="cartRemoveBtn">Empty cart</button>
-        <button id="validateCart">Pay</button>
+        <div class="headerLine"></div>
     </Header>
     <main>
         <select name="catSelect" id="categoriesSelect">
@@ -26,15 +37,20 @@
             <option value="launch">Launch vehicle</option>
             <option value="other">Other</option>
         </select>
-        <h2 class="catTitle"></h2>
-        <div class="articlesContainer">
-            
-
-        </div>
+            <div class="articlesContainer"></div>
     </main>
 
     <footer>
-
+        <a href="#top"><div class="backTop"><p>Back to top</p></div></a>
+        <div class="footerContainer">
+            <div class="footerMid">
+                <p>© Celestial discount - 2021</p>
+                <div>
+                    <p>Site by LENFUME Julien</p>
+                    <a href="https://github.com/julabina"><p>Github link</p></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="index.js"></script>

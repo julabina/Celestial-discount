@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto&display=swap");
+
 *,
 ::before,
 ::after {
@@ -8,26 +10,341 @@
 
 /* HEADER CSS */
 
+header {
+  font-family: "Cairo", sans-serif;
+}
+
+header h1 {
+  font-size: 3em;
+  text-align: center;
+  margin: 10px 0 -20px 0;
+}
+
+header h3 {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.headerLine {
+  border-bottom: rgba(0, 0, 0, 0.26) 1px solid;
+  width: 90%;
+  display: block;
+  margin: 30px auto 40px auto;
+}
+
+.headerLineCart {
+  border-bottom: rgba(0, 0, 0, 0.26) 1px solid;
+  width: 80%;
+  display: block;
+  margin: 15px auto 0 auto;
+}
+
+#hideCartBtn {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  background: initial;
+  width: 60px;
+  height: 40px;
+  color: rgba(0, 0, 0, 0.733);
+  border: rgba(0, 0, 0, 0.733) 4px solid;
+  border-radius: 40px;
+  margin: 15px 0 0 20px;
+}
+
+#hideCartBtn:hover {
+  color: black;
+  border: black 4px solid;
+  background: rgba(0, 0, 0, 0.247);
+  cursor: pointer;
+}
+
+.cart {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  background: white;
+  width: 40%;
+  right: 10px;
+  top: 130px;
+  position: absolute;
+}
+
 .cartArticle {
   display: flex;
+  justify-content: space-around;
+  margin: 5px 0;
+}
+
+.cartArticle p {
+  line-height: 25px;
+}
+
+.cartArticleName {
+  width: 100px;
+}
+
+.cartArticlePrice {
+  width: 60px;
+}
+
+.cartArticle button {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  line-height: 10px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background: white;
+  border: rgba(0, 0, 0, 0.767) 1px solid;
+}
+
+#removeItemBtn {
+  color: rgb(204, 7, 7);
+}
+
+.cartArticle button:hover {
+  background: rgba(0, 0, 0, 0.137);
+  cursor: pointer;
+}
+
+.cartArticleAddRemove {
+  display: flex;
+  justify-content: space-between;
+  width: 85px;
+}
+
+.cartBottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.cartBottomTotal {
+  line-height: 40px;
+}
+
+.cartBottomBtn {
+  display: flex;
+  justify-content: end;
+}
+
+.cartBottomBtn button {
+  height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background: white;
+  border: 1px black solid;
+  border-radius: 40px;
+}
+
+#cartRemoveBtn:hover {
+  background: rgba(0, 0, 0, 0.137);
+  cursor: pointer;
+}
+
+#validateCart:hover {
+  background: rgba(4, 110, 4, 0.849);
+  cursor: pointer;
+}
+
+.emptyText {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
 }
 
 /* MAIN css */
+main {
+  font-family: "Roboto", sans-serif;
+}
+
+select {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 40px;
+  width: 160px;
+  text-align: center;
+  border-radius: 40px;
+  margin: 0 0 50px 20px;
+}
+
+.articlesContainer {
+  width: 100%;
+  margin: 0 20px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+  grid-auto-rows: 270px;
+  grid-gap: 20px;
+}
 
 .article {
   width: 200px;
+  height: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border-bottom: solid 2px black;
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+  border-radius: 20px;
+}
+
+.article h2 {
+  margin: 10px 0 20px 0;
 }
 
 .articleImgContainer img {
   width: 200px;
   height: 100px;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  border: 2px solid black;
 }
 
 .articleBottom {
+  margin-top: 35px;
   display: flex;
+  width: 70%;
+  justify-content: space-around;
+}
+
+.articleBottom button {
+  height: 30px;
+  width: 40px;
+  border-radius: 40px;
+  border: black 1px solid;
+}
+
+.articleBottom button:hover {
+  cursor: pointer;
+  border: black 2px solid;
+}
+
+.articleBottom button:focus {
+  background: rgba(0, 128, 0, 0.658);
+}
+
+.priceArticle {
+  line-height: 30px;
+}
+
+/* FOOTER CSS */
+
+footer {
+  font-family: "Roboto", sans-serif;
+  border-top: rgba(0, 0, 0, 0.425) 1px solid;
+  margin-top: 50px;
+  height: 200px;
+  background: rgba(188, 179, 212, 0.829);
+}
+
+.backTop {
+  height: 40px;
+  background: rgba(157, 150, 179, 0.685);
+  border-bottom: rgba(0, 0, 0, 0.425) 1px solid;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.backTop p {
+  text-align: center;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.backTop:hover {
+  background: rgba(157, 150, 179, 0.315);
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+}
+
+.footerContainer a:hover {
+  text-decoration: underline;
+}
+
+.footerMid {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height: 50px;
+}
+
+/* MQ */
+
+@media screen and (max-width: 1000px) {
+  .cart {
+    width: 60%;
+  }
+
+  .footerMid {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  .headerLine {
+    display: none;
+  }
+
+  #hideCartBtn {
+    width: 50%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  select {
+    width: 90%;
+    margin: 20px initial;
+  }
+
+  .cart {
+    position: initial;
+    width: 90%;
+    margin: 20px 0 10px 0;
+    top: initial;
+    right: initial;
+  }
+
+  .footerMid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerMid p {
+    margin: 5px 0;
+  }
 }
