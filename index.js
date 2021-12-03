@@ -77,9 +77,9 @@ const displayCart = () => {
   }
 };
 
-const addToCart = (a) => {
+const addToCart = (ind) => {
   for (let i = 0; i < datas.articles.length; i++) {
-    if (a === datas.articles[i].id) {
+    if (ind === datas.articles[i].id) {
       let art = {
         id: datas.articles[i].id,
         name: datas.articles[i].name,
