@@ -1,3 +1,3 @@
 V 1
 
-https://julabina.github.io/One_page_js_E_commerce/
+https://julabina.github.io/Celestial-discount/
