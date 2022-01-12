@@ -4,11 +4,11 @@ Celestial discount is an e-commerce site selling celestial objects.
 
 Coded in vanilla javascript.
 
-![screenshot](./assets/screenshot.png)
+![screenshot](./assets/screenshot.webp)
 
 V 1.1 - 03/12/21
 
-<https://julabina.github.io/Celestial-discount/>
+[Live site](https://julabina.github.io/Celestial-discount/)
 
 ## Features
 
