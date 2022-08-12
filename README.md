@@ -20,6 +20,6 @@ V 1.1 - 03/12/21
 
 ## About
 
-- [Github](https://github.com/julabina) - Profil
-- [Linkedin](#) - Soon
-- [Portfolio](#) - Soon
+- [Github](https://github.com/julabina)
+- [Linkedin](https://www.linkedin.com/in/julien-lenfum%C3%A9-bb2979215/)
+- [Portfolio](https://julienlenfume.com/)
